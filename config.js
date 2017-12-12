@@ -7,7 +7,8 @@ var config = function () {
 
   if (process.env.RPC_HOST && process.env.RPC_PORT) {
     this.rpcUrl = `http://${process.env.RPC_HOST}:${process.env.RPC_PORT}`;
-    this.provider = new web3.providers.HttpProvider(this.ipcPath, 0);
+    console.log(`connecting to ${this.rpcUrl}`);
+    this.provider = new web3.providers.HttpProvider(this.rpcUrl, 0);
   } else {
     this.ipcPath = process.env["HOME"] + "/.local/share/io.parity.ethereum/jsonrpc.ipc";
     this.provider = new web3.providers.IpcProvider(this.ipcPath, net);
