@@ -2,7 +2,7 @@ FROM node:8.7.0-onbuild
 
 WORKDIR /usr/src/app
 
-COPY package.json package-lock.json ./
+COPY package.json ./
 RUN npm install
 
 COPY . .
