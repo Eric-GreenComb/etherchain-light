@@ -1,4 +1,4 @@
-FROM node:8.7.0-onbuild
+FROM node:8.7.0
 
 WORKDIR /usr/src/app
 
